@@ -52,4 +52,4 @@ jobs:
             docker load -i nestjs-app.tar
             docker stop nestjs-app || true
             docker rm nestjs-app || true
-            docker run -d --name nestjs-app -p 3000:3000 nestjs-app
+            docker compose up -d

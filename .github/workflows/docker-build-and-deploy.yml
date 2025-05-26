@@ -23,7 +23,9 @@ jobs:
         run: docker build -t nestjs-app .
 
       - name: Save Docker image to tar
-        run: docker save nestjs-app -o nestjs-app.tar
+        run: |
+          docker save nestjs-app -o nestjs-app.tar
+          chmod 644 nestjs-app.tar
 
       - name: Install ssh client
         run: sudo apt-get update && sudo apt-get install -y openssh-client
